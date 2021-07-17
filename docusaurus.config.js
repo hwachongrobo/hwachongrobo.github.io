@@ -16,7 +16,11 @@ module.exports = {
       {
         docs: {
           path: "docs",
+          editUrl:
+            "https://github.com/hwachongrobo/hwachongrobo.github.io/edit/main/",
           routeBasePath: "/",
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
