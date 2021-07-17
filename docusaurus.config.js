@@ -33,7 +33,7 @@ module.exports = {
     announcementBar: {
       id: "docs-only-notice",
       content:
-        'This website only contains documentation. To go to the main website, click <a href="https://robo.infocommsociety.com/">here</a>',
+        'This website only contains documentation. To go to the main website, click <a href="https://robo.infocommsociety.com/">here</a>.',
     },
     prism: {
       theme: require("prism-react-renderer/themes/vsLight"),
