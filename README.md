@@ -1,6 +1,7 @@
 # Hwa Chong Robotics Website
 
 ![License](https://img.shields.io/github/license/hwachongrobo/hwachongrobo.github.io)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/hwachongrobo/hwachongrobo.github.io/deploy)
 
 ## Local Development
 
