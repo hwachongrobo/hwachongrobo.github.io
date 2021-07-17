@@ -52,10 +52,26 @@ module.exports = {
       title: "Hwa Chong Robotics",
       items: [
         {
-          type: "doc",
-          docId: "content",
-          position: "left",
           label: "Docs",
+          position: "left",
+          items: [
+            {
+              label: "Lego",
+              to: "/lego/introduction",
+            },
+            {
+              label: "RCJ Soccer Lightweight",
+              to: "/soccer-lightweight/introduction",
+            },
+            {
+              label: "RCJ Soccer Open",
+              to: "/soccer-open/introduction",
+            },
+            {
+              label: "RCJ Rescue Line",
+              to: "/rescue-line/introduction",
+            },
+          ],
         },
         {
           type: "search",
