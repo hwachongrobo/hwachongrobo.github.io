@@ -5,13 +5,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://hwachongroboticss.github.io/hwachongrobotics.github.io/',
+  baseUrl: '/hwachongrobotics.github.io/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'hwachongroboticss', // Usually your GitHub org/user name.
+  projectName: 'hwachongrobotics.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'My Site',
