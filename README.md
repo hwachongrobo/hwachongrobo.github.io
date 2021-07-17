@@ -11,8 +11,10 @@ yarn start
 
 ## Deployment
 
+Website should be automatically deployed to the `gh-pages` branch when a push or pull request is made to the `main` branch.
+
+For manual deployment, run the following:
+
 ```console
 GIT_USER=<Your GitHub username> USE_SSH=true DEPLOYMENT_BRANCH=gh-pages yarn deploy
 ```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
