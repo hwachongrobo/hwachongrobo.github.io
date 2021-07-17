@@ -9,6 +9,8 @@
 yarn start
 ```
 
+For information on how to add content, refer to [www.markdownguide.org/basic-syntax](https://www.markdownguide.org/basic-syntax) and [docusaurus.io/docs/markdown-features](https://docusaurus.io/docs/markdown-features).
+
 ## Deployment
 
 Website should be automatically deployed to the `gh-pages` branch when a push or pull request is made to the `main` branch.
