@@ -7,7 +7,8 @@ import TabItem from '@theme/TabItem';
 
 # Pybricks
 
-Pybricks is an alternative method of programming for EV3 Mindstorms endorsed by LEGO®.
+Pybricks is an alternative method of programming for EV3 Mindstorms endorsed by
+LEGO®.
 
 For more information, visit [pybricks.com][].
 
@@ -64,31 +65,44 @@ ev3.speaker.beep(frequency=1000, duration=500)
 </TabItem>
 </Tabs>
 
-However, they both come with their sets of issues. For example, EV3-G is known to be very laggy, particularly with large codebases; and EV3 Classroom does not support the use of HiTechnic Color Sensors.
+However, they both come with their sets of issues. For example, EV3-G is known
+to be very laggy, particularly with large codebases; and EV3 Classroom does not
+support the use of HiTechnic Color Sensors.
 
-Pybricks uses python, a text-based programming language, allowing for much more customisation at the expense of a greater learning curve. It is also based on ev3dev, a very mature open-source library.
+Pybricks uses python, a text-based programming language, allowing for much more
+customisation at the expense of a greater learning curve. It is also based on
+ev3dev, a very mature open-source library.
 
-Note that Pybricks requires the use of a MicroSD card as it needs to be run on custom firmware.
+Note that Pybricks requires the use of a MicroSD card as it needs to be run on
+custom firmware.
 
 ## Getting Started
 
-The Pybricks team has already written a very well-documented tutorial on how to get started [here][pybricks installation].
+The Pybricks team has already written a very well-documented tutorial on how to
+get started [here][pybricks installation].
 
-You would need to flash the firmware onto a MicroSD card and set-up the Visual Studio Code IDE for EV3 MicroPython development.
+You would need to flash the firmware onto a MicroSD card and set-up the Visual
+Studio Code IDE for EV3 MicroPython development.
 
 ## Using Pybricks
 
 The full documentation is available [here][pybricks docs].
 
-Instructions on how to interface with EV3 devices can be found more specifically [here][pybricks docs ev3devices] and there is also a `DriveBase` class that you can use [here][pybricks docs robotics].
+Instructions on how to interface with EV3 devices can be found more specifically
+[here][pybricks docs ev3devices] and there is also a `DriveBase` class that you
+can use [here][pybricks docs robotics].
 
 ### HiTechnic Color Sensor
 
-As the HiTechnic Color Sensor is not an official product provided by Lego, Pybricks does not natively support it. However, we can still use it as the ev3dev community has already written code to work with it.
+As the HiTechnic Color Sensor is not an official product provided by Lego,
+Pybricks does not natively support it. However, we can still use it as the
+ev3dev community has already written code to work with it.
 
-The documentation for using ev3dev sensors with Pybricks can be found [here](pybricks docs ev3devsensor).
+The documentation for using ev3dev sensors with Pybricks can be found
+[here](pybricks docs ev3devsensor).
 
-Conveniently, someone has also written code to use the Hitechnic Color Sensor at [this random GitHub issue](hitechnic color sensor issue).
+Conveniently, someone has also written code to use the Hitechnic Color Sensor at
+[this random GitHub issue](hitechnic color sensor issue).
 
 ```python
 from pybricks.ev3devio import Ev3devSensor
