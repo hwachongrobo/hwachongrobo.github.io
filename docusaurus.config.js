@@ -36,8 +36,8 @@ module.exports = {
         'This website only contains documentation. To go to the main website, click <a href="https://robo.infocommsociety.com/">here</a>.',
     },
     prism: {
-      theme: require("prism-react-renderer/themes/vsLight"),
-      darkTheme: require("prism-react-renderer/themes/vsDark"),
+      theme: require("prism-react-renderer/themes/github"),
+      darkTheme: require("prism-react-renderer/themes/dracula"),
     },
     algolia: {
       apiKey: "YOUR_API_KEY", // TODO: Add your own API key
