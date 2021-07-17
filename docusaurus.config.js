@@ -114,7 +114,7 @@ module.exports = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/hwachongroboticss",
+              href: "https://github.com/hwachongrobo",
             },
           ],
         },
