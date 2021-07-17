@@ -116,6 +116,10 @@ module.exports = {
               label: "GitHub",
               href: "https://github.com/hwachongrobo",
             },
+            {
+              label: "Email",
+              href: "mailto:hwachongrobotics@gmail.com",
+            },
           ],
         },
         {
