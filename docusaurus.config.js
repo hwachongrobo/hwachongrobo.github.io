@@ -33,6 +33,10 @@ module.exports = {
       theme: require("prism-react-renderer/themes/vsLight"),
       darkTheme: require("prism-react-renderer/themes/vsDark"),
     },
+    algolia: {
+      apiKey: "YOUR_API_KEY", // TODO: Add your own API key
+      indexName: "YOUR_INDEX_NAME", // TODO: Add your own index name
+    },
     navbar: {
       hideOnScroll: true,
       logo: {
@@ -46,6 +50,10 @@ module.exports = {
           docId: "content",
           position: "left",
           label: "Docs",
+        },
+        {
+          type: "search",
+          position: "right",
         },
       ],
     },
