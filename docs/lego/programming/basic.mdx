@@ -2,8 +2,7 @@
 sidebar_position: 1
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
 
 # Small Basic EV3
 EV3 Basic is an alternative method of programming for EV3 Mindstorms.  
@@ -18,31 +17,37 @@ For more information visit, [Microsoft Small Basic][MSB] or [EV3 Basic Extension
 
 You might already be familiar with EV3-G and EV3 Classroom.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs
-    defaultValue="ev3-g"
-    values={[
-        {label: 'EV3-G', value: 'ev3-g'},
-        {label: 'EV3 Classroom', value: 'ev3-classroom'},
-        {label: 'Small Basic EV3', value: 'sbev3'},
-    ]}>
-<TabItem value="ev3-g">
+  defaultValue="ev3-g"
+  values={[
+    {label: 'EV3-G', value: 'ev3-g'},
+    {label: 'EV3 Classroom', value: 'ev3-classroom'},
+    {label: 'Small Basic EV3', value: 'sbev3'},
+  ]}>
+  <TabItem value="ev3-g">
 
-![Screenshot of EV3-G][]
+  ![Screenshot of EV3-G][]
+  
+  </TabItem>
+  <TabItem value="ev3-classroom">
 
-</TabItem>
-<TabItem value="ev3-classroom">
+  ![Screenshot of EV3 Classroom][]
 
-![Screenshot of EV3 Classroom][]
-<TabItem value="sbev3">
+  </TabItem>
+  <TabItem value="sbev3">
 
-```
-for i = 1 to 4
-    Motor.Move("BC", 50, 720, "True")
-    Motor.MoveSync("BC", 30, 0, 320, "True") 
-EndFor
-```
+  ```
+  for i = 1 to 4
+      Motor.Move("BC", 50, 720, "True")
+      Motor.MoveSync("BC", 30, 0, 320, "True") 
+  EndFor
+  ```
 
-</TabItem>
+  </TabItem>
+</Tabs>
 
 However, they both come with their sets of issues. For example, EV3-G is known
 to be very laggy, particularly with large codebases;  
