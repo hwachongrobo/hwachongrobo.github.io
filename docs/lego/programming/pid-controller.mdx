@@ -3,5 +3,50 @@ sidebar_position: 2
 ---
 
 # PID Controller
+PID. Proportional–Integral–Derivative.  
+In Lego, it is commonly used for insane and accurate line tracking.  
+PID Math:  
 
-🚧 Under construction 🚧
+# What does PID mean?
+P -   
+  
+I -   
+  
+D -   
+  
+So this is how you should program PID in all three "programming languages"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="ev3-g"
+  values={[
+    {label: 'EV3-G', value: 'ev3-g'},
+    {label: 'Pybricks', value: 'pybricks'},
+    {label: 'Small Basic EV3', value: 'sbev3'},
+  ]}>
+  <TabItem value="ev3-g">
+
+  ![Screenshot of EV3-G-PID][]
+  
+  </TabItem>
+<TabItem value="pybricks">
+
+  ```python
+    
+  ```
+
+  </TabItem>
+  <TabItem value="sbev3">
+
+  ```
+  for i = 1 to 4
+      Motor.Move("BC", 50, 720, "True")
+      Motor.MoveSync("BC", 30, 0, 320, "True") 
+  EndFor
+  ```
+
+  </TabItem>
+</Tabs>
+[Screenshot of EV3-G-PID]:
