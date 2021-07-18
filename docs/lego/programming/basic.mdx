@@ -35,15 +35,25 @@ You might already be familiar with EV3-G and EV3 Classroom.
 ![Screenshot of EV3 Classroom][]
 <TabItem value="sbev3">
 
-![Screenshot of Small Basic EV3][]
+```
+for i = 1 to 4
+    Motor.Move("BC", 50, 720, "True")
+    Motor.MoveSync("BC", 30, 0, 320, "True") 
+EndFor
+```
 
 </TabItem>
 
 However, they both come with their sets of issues. For example, EV3-G is known
-to be very laggy, particularly with large codebases; and EV3 Classroom does not
-support the use of HiTechnic Color Sensors.
+to be very laggy, particularly with large codebases;  
+EV3 Classroom and Small Basic EV3 does not support the use of HiTechnic Color Sensors.  
+  
+Small Basic EV3 uses a smiliar concept to Python
+  
+## Getting Started
 
+The EV3 Basic team has already written a very well-documented tutorial on how to
+get started refer to the top few links.
 
 [Screenshot of EV3-G]: /img/docs/lego/ev3_g.png
 [Screenshot of EV3 Classroom]: /img/docs/lego/ev3_classroom.png
-[Screenshot of Small Basic EV3]: /img/docs/lego/ev3_classroom.png
