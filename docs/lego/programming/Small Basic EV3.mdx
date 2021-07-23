@@ -85,7 +85,7 @@ print("Hello world")
 ```
 ## PID
 
-```pseudo 
+```Python 
 Motor.Invert("B")
 '[2] = Right sensor = Port 3
 
@@ -95,8 +95,6 @@ TotalRGB[1] = 0
 
 lightVal = 0
 
-Port = 1
-Movement = 0
 Last_Error = 0
 TP = 100 '100
 Kp = 0.12 '0.12
@@ -106,11 +104,6 @@ Intergal = 0
 
 Sensor.SetMode(2, 4)
 
-While "True"
-  readVal()
-  PD()
-EndWhile
-  
 Sub PD
   Error = lightVal - TotalRGBTH[1]
   Intergal = Error + Intergal*0.5
@@ -124,9 +117,6 @@ Sub readVal
   lightVal = rawValue[0] + rawValue[1] + rawValue[2]
 EndSub
 ```
-
-## Bluetooth Connection (Optional)
-
 
 [Screenshot of EV3-G]: /img/docs/lego/ev3_g.png
 [Screenshot of EV3 Classroom]: /img/docs/lego/ev3_classroom.png
