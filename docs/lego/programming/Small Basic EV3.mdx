@@ -89,7 +89,43 @@ print("Hello world")
 ## PID
 
 ```
-print("Hello world")
+Motor.Invert("B")
+'[2] = Right sensor = Port 3
+
+TotalRGBTH[1] = 524 
+
+TotalRGB[1] = 0
+
+lightVal = 0
+
+Port = 1
+Movement = 0
+Last_Error = 0
+TP = 100 '100
+Kp = 0.12 '0.12
+Ki = 0.005 '0.005
+Kd = 0.4 '0.4
+Intergal = 0
+
+Sensor.SetMode(2, 4)
+
+While "True"
+  readVal()
+  PD()
+EndWhile
+  
+Sub PD
+  Error = lightVal - TotalRGBTH[1]
+  Intergal = Error + Intergal*0.5
+  Correction = (Error * Kp) + (Error - Last_Error)*Kd + Intergal*Ki
+  Motor.StartSync("BC",Math.Max(Math.Min((TP + Correction),100),-100),Math.Max(Math.Min((TP - Correction),100),-100))
+  Last_Error = Error
+EndSub
+
+Sub readVal
+  rawValue = Sensor.ReadRaw(2,3)
+  lightVal = rawValue[0] + rawValue[1] + rawValue[2]
+EndSub
 ```
 
 ## Bluetooth Connection (Optional)
