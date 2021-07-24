@@ -60,6 +60,10 @@ module.exports = {
               to: "/lego/introduction",
             },
             {
+              label: "Soccer",
+              to: "/soccer/introduction",
+            },
+            {
               label: "RCJ Soccer Lightweight",
               to: "/soccer-lightweight/introduction",
             },
@@ -70,6 +74,10 @@ module.exports = {
             {
               label: "RCJ Rescue Line",
               to: "/rescue-line/introduction",
+            },
+            {
+              label: "Others",
+              to: "/Others/introduction",
             },
           ],
         },
