@@ -89,6 +89,7 @@ Motor.MoveSync(port,speed for port 1, speed for port 2, degrees,brake)
 ```
 This is what I would use for basic movement as you can control the speed of each motor individually. Its the excat replica of the Move Tank block in EV3-G
 ## Sensors
+# Light Sensor
 ```
 Sensor.SetMode(port,mode number)
 ```
@@ -110,6 +111,18 @@ TextWindow.WriteLine(lightIntenstiy)
 
 What would you see is a pop up menu that shows you three arrays, 0=x, 1=x, 2=x, (arrays start at zero genius). Using common sense, you would add up all of the values and💥that is your reflected light value.  
   
+# Gyro Sensor  
+First of all, you should not be using Gyro at all as once it dies on the field you robot is uselss
+  
+If you have the guts enough, well good for you 👏. Lemme make a disclamer, EV3 basic does not have a dedicated Gyro reset class but this alternative.
+```
+
+```
+What this does is to take the current gyro degree/angle value and subtracts it. Such that before you turn, your gyro value is 0.
+  
+For the rest of the sensor what I can say is reflected by this image
+![Eyes-Roll][]
+Bruh 🙄 why are you even alive in the first place. Gettt good  
   
 ## Advanced
 # PID
@@ -151,6 +164,7 @@ EndSub
 ```
 [Screenshot of EV3-G]: /img/docs/lego/ev3_g.png
 [Screenshot of EV3 Classroom]: /img/docs/lego/ev3_classroom.png
+[Eyes-Roll]: /img/docs/lego/eyesroll
 [MSB]:https://smallbasic-publicwebsite.azurewebsites.net/
 [EV3B]:https://sites.google.com/site/ev3basic/ev3-basic-programming
 [SBD]:https://download.microsoft.com/download/9/0/6/90616372-C4BF-4628-BC82-BD709635220D/Introducing%20Small%20Basic.pdf
