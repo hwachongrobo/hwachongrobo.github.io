@@ -76,6 +76,10 @@ module.exports = {
               to: "/rescue-line/introduction",
             },
             {
+              label: "Vex",
+              to: "/vex/introduction",
+            },
+            {
               label: "Others",
               to: "/Others/introduction",
             },
@@ -114,6 +118,10 @@ module.exports = {
             {
               label: "RCJ Rescue Line",
               to: "/rescue-line/introduction",
+            },
+            {
+              label: "Vex",
+              to: "/vex/introduction",
             },
             {
               label: "Others",
