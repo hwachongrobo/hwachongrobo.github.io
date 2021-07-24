@@ -61,24 +61,25 @@ Once you are done with that, go download the [Small Basic IDE][MSB-Install] and 
 
 ## Common functions you might need
 ```
-LCD.Text("Hello")
-```  
-```
 TextWindow.WriteLine("Hello") #Cannot be compiled
 ```
 ```
 Program.Delay(Duration)
 ```
+## Basic Movment
 ```
 Motor.Invert("Port number")
 ```
-## Basic Movment
+Like the name suggests, it inverts the motor speed automatically when the code is compiled it doesnt give you eye cancer 😄:
 ```
-print("Hello world")
+Motor.GetCount(port)
 ```
+This is to get the number of degrees the motor has made
 ```
-print("Hello world")
+Motor.MoveSync(port,speed for port 1, speed for port 2, degrees,brake)
 ```
+This is what I would use for basic movement as you can control the speed of each motor individually  
+Its the excatly replica of the Move Tank block in EV3-G
 ## Sensors
 ```
 print("Hello world")
