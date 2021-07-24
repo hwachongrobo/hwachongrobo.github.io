@@ -138,7 +138,7 @@ module.exports = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/hwachongrobo",
+              href: "https://github.com/hwachongrobotics",
             },
             {
               label: "Email",
