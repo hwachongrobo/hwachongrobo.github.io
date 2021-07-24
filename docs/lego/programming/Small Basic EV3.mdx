@@ -59,6 +59,15 @@ Before you get your hand dirty and start programming like the Russians, you migh
   
 Once you are done with that, go download the [Small Basic IDE][MSB-Install] and the [EV3 Basic Extension][EV3B-Install]
 
+Take note that it only works for Windows, those using macOS can just click off of this guide and miss out on the benefits of using small basic 😄. That is what you get for paying for an overly priced laptop 😈
+
+So how are you supposed to download the EV3 Basic code and run on your EV3 🤔  
+  
+Go to your Windows start menu by clicking on the little Windows icon and find for EV3 Explorer. The left side of the screen is your EV3 and the right side is your computer. Find for your code on the right, and create/navigate to a folder you made in the EV3 brick on the left. Once you are in your desired path, click <b>Download</b> on the bottom right of the screen. Then click on the file on the left side and click on <b>Compile</b> and you should be presented with an executable.
+  
+insert the entire EV3 explorer image  
+  
+Phew 😌 That was alot hope you caught up  
 ## Common functions you might need
 ```
 TextWindow.WriteLine("Hello") #Cannot be compiled
@@ -81,11 +90,31 @@ Motor.MoveSync(port,speed for port 1, speed for port 2, degrees,brake)
 This is what I would use for basic movement as you can control the speed of each motor individually. Its the excat replica of the Move Tank block in EV3-G
 ## Sensors
 ```
-print("Hello world")
+Sensor.SetMode(port,mode number)
 ```
-## PID
+For EV3 Sensors, there are usually 3 ports, 
+  
+1 -  Color  
+2 -  Reflected Light Intensity  
+3 -  Ambient Light Intensity  
+  
+However, for Small Basic, it opens up another port there is more powerful and more accurate than the other three. Its called the <b>ReadRaw</b> mode.  
+It is the fourth port in the EV3 Basic syntax and it reads the raw RGB value of the light sensor. Ranging from 0 - 500 🤯.  
+Therefore, it doesn't matter if your sensor position, whether it is too high or too close to the ground <b>SKILL ISSUE</b>
+So once you have set your port number to 4 and want to unlock the <b>UNLIMITED POWERRR</b> of that color sensor mode. How are you supposed to read it then? Well, if you have been reading the guide throughly (I know some of you do not 😏) you use the TextWindow.WriteLine("") and Sensor.ReadRaw() classes.
+```
+lightIntesntiy = Sensor.ReadRaw(port,3)
+TextWindow.WriteLine(lightIntenstiy)
+```
+❗❗❗ Remember you cannot compile it in EV3 Explorer just run it directly from the IDE ❗❗❗
 
-```Python 
+What would you see is a pop up menu that shows you three arrays, 0=x, 1=x, 2=x, (arrays start at zero genius). Using common sense, you would add up all of the values and💥that is your reflected light value.  
+  
+  
+## Advanced
+# PID
+
+``` 
 Motor.Invert("B")
 '[2] = Right sensor = Port 3
 
@@ -117,7 +146,9 @@ Sub readVal
   lightVal = rawValue[0] + rawValue[1] + rawValue[2]
 EndSub
 ```
-
+# Acceleration and Deceleration
+```
+```
 [Screenshot of EV3-G]: /img/docs/lego/ev3_g.png
 [Screenshot of EV3 Classroom]: /img/docs/lego/ev3_classroom.png
 [MSB]:https://smallbasic-publicwebsite.azurewebsites.net/
