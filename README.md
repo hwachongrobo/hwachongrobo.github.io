@@ -24,9 +24,9 @@ For manual deployment, run the following:
 GIT_USER=<Your GitHub username> USE_SSH=true DEPLOYMENT_BRANCH=gh-pages yarn deploy
 ```
 
-[license file]: https://github.com/hwachongrobo/hwachongrobo.github.io/blob/main/LICENSE
-[license]: https://img.shields.io/github/license/hwachongrobo/hwachongrobo.github.io
-[deploy action]: https://github.com/hwachongrobo/hwachongrobo.github.io/actions/workflows/deploy.yml
-[deploy status]: https://img.shields.io/github/workflow/status/hwachongrobo/hwachongrobo.github.io/deploy
+[license file]: https://github.com/hwachongrobotics/hwachongrobotics.github.io/blob/main/LICENSE
+[license]: https://img.shields.io/github/license/hwachongrobotics/hwachongrobotics.github.io
+[deploy action]: https://github.com/hwachongrobotics/hwachongrobotics.github.io/actions/workflows/deploy.yml
+[deploy status]: https://img.shields.io/github/workflow/status/hwachongrobotics/hwachongrobotics.github.io/deploy
 [markdown syntax]: https://www.markdownguide.org/basic-syntax
 [docusaurus markdown syntax]: https://docusaurus.io/docs/markdown-features

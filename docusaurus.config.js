@@ -2,9 +2,9 @@
 module.exports = {
   title: "Hwa Chong Robotics",
   tagline: "Robots are cool",
-  organizationName: "hwachongrobo",
-  projectName: "hwachongrobo.github.io",
-  url: "https://hwachongrobo.github.io",
+  organizationName: "hwachongrobotics",
+  projectName: "hwachongrobotics.github.io",
+  url: "https://hwachongrobotics.github.io",
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "throw",
@@ -17,7 +17,7 @@ module.exports = {
         docs: {
           path: "docs",
           editUrl:
-            "https://github.com/hwachongrobo/hwachongrobo.github.io/edit/main/",
+            "https://github.com/hwachongrobotics/hwachongrobotics.github.io/edit/main/",
           routeBasePath: "/",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
