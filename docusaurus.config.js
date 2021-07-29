@@ -19,6 +19,7 @@ module.exports = {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           showLastUpdateTime: true,
+          sidebarCollapsible: true,
           editUrl:
             "https://github.com/hwachongrobotics/hwachongrobotics.github.io/edit/main/",
         },
@@ -28,7 +29,6 @@ module.exports = {
       },
     ],
   ],
-  plugins: [],
   themeConfig: {
     image: "img/meta.png",
     announcementBar: {
@@ -43,6 +43,7 @@ module.exports = {
     algolia: {
       apiKey: "YOUR_API_KEY", // TODO: Add your own API key
       indexName: "YOUR_INDEX_NAME", // TODO: Add your own index name
+      contextualSearch: true,
     },
     navbar: {
       hideOnScroll: true,
@@ -78,7 +79,6 @@ module.exports = {
         },
       ],
     },
-    sidebarCollapsible: true,
     hideableSidebar: true,
     footer: {
       style: "dark",
@@ -141,5 +141,6 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Hwa Chong Robotics`,
     },
+    sitemap: { changefreq: "weekly", priority: 0.5, trailingSlash: false },
   },
 };
