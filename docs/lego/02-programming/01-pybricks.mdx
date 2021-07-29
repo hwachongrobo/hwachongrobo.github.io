@@ -1,0 +1,176 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Pybricks
+
+Pybricks is an alternative method of programming for EV3 Mindstorms endorsed by
+LEGO®.
+
+For more information, visit [pybricks.com][].
+
+## Why use Pybricks?
+
+You might already be familiar with EV3-G and EV3 Classroom.
+
+<Tabs
+    defaultValue="ev3-g"
+    values={[
+        {label: 'EV3-G', value: 'ev3-g'},
+        {label: 'EV3 Classroom', value: 'ev3-classroom'},
+        {label: 'Pybricks', value: 'pybricks'},
+    ]}>
+<TabItem value="ev3-g">
+
+![Screenshot of EV3-G][]
+
+</TabItem>
+<TabItem value="ev3-classroom">
+
+![Screenshot of EV3 Classroom][]
+
+</TabItem>
+<TabItem value="pybricks">
+
+```python
+#!/usr/bin/env pybricks-micropython
+from pybricks.hubs import EV3Brick
+from pybricks.ev3devices import Motor
+from pybricks.parameters import Port
+
+# Create your objects here
+
+# Initialize the EV3 Brick.
+ev3 = EV3Brick()
+
+# Initialize a motor at port B.
+test_motor = Motor(Port.B)
+
+# Write your program here
+
+# Play a sound.
+ev3.speaker.beep()
+
+# Run the motor up to 500 degrees per second.
+# To a target angle of 90 degrees.
+test_motor.run_target(500, 90)
+
+# Play another beep sound.
+ev3.speaker.beep(frequency=1000, duration=500)
+```
+
+</TabItem>
+</Tabs>
+
+However, they both come with their sets of issues. For example, EV3-G is known
+to be very laggy, particularly with large codebases; and EV3 Classroom does not
+support the use of HiTechnic Color Sensors.
+
+Pybricks uses Python, a text-based programming language, allowing for much more
+customisation at the expense of a greater learning curve. It is also based on
+ev3dev, a very mature open-source library.
+
+Note that Pybricks requires the use of a MicroSD card as it needs to be run on
+custom firmware.
+
+## Getting Started
+
+The Pybricks team has already written a very well-documented tutorial on how to
+get started [here][pybricks installation].
+
+You would need to flash the firmware onto a MicroSD card and set-up the Visual
+Studio Code IDE for EV3 MicroPython development.
+
+## Using Pybricks
+
+The full documentation is available [here][pybricks docs].
+
+Instructions on how to interface with EV3 devices can be found more specifically
+[here][pybricks docs ev3devices] and there is also a `DriveBase` class that you
+can use [here][pybricks docs robotics].
+
+### HiTechnic Color Sensor
+
+As the HiTechnic Color Sensor is not an official product provided by Lego,
+Pybricks does not natively support it. However, we can still use it as the
+ev3dev community has already written code to work with it.
+
+The documentation for using ev3dev sensors with Pybricks can be found
+[here][pybricks docs ev3devsensor].
+
+Conveniently, someone has also written code to use the Hitechnic Color Sensor at
+[this random GitHub issue][hitechnic color sensor issue].
+
+```python
+from pybricks.ev3devio import Ev3devSensor
+
+
+class HTColorSensor(Ev3devSensor):
+    _ev3dev_driver_name = "ht-nxt-color-v2"
+    _number_of_values = 4
+
+    def _open_files(self):
+        super()._open_files()
+        self._command_file = open(self.path + "command", "w")
+
+    def _close_files(self):
+        super()._close_files()
+        self._command_file.close()
+
+    # Set the scan frequency to 50 Hz.
+    def set_frequency_50hz(self):
+        self._command_file.write("50HZ")
+        self._command_file.flush()
+
+    # Set the scan frequency to 60 Hz.
+    def set_frequency_60hz(self):
+        self._command_file.write("60HZ")
+        self._command_file.flush()
+
+    # Returns a tuple of color values: (red, blue, green, white). Ranges from 0 to 255 for each.
+    def rgbw(self):
+        self._mode("RGB")
+        errors = 0
+        while True:
+            try:
+                return self._value(0), self._value(1), self._value(2), self._value(3)
+            except:
+                errors += 1  # may raise ENODEV error
+                # returns tuple of zeros if there are two consecutive errors
+                if errors > 1:
+                    return 0, 0, 0, 0
+
+    # Returns the color index. Ranges from 0 to 17.
+    def color(self):
+        self._mode("COLOR")
+        errors = 0
+        while True:
+            try:
+                return self._value(0)
+            except:
+                errors += 1  # may raise ENODEV error
+                # returns zero if there are two consecutive errors
+                if errors > 1:
+                    return 0
+```
+
+You can use it like this:
+
+```python
+ht_color_sensor = HTColorSensor(Port.S1)  # initialise sensor at port 1
+
+color = ht_color_sensor.color()
+print(color)  # prints number from 0 to 17 corresponding to the detected color
+
+r, g, b, w = ht_color_sensor.rgbw()
+print(r, g, b, w)  # prints the raw values for red, green, blue, and white
+```
+
+[pybricks.com]: https://pybricks.com/
+[Screenshot of EV3-G]: /img/docs/lego/ev3_g.png
+[Screenshot of EV3 Classroom]: /img/docs/lego/ev3_classroom.png
+[pybricks installation]: https://pybricks.com/install/mindstorms-ev3/installation/
+[pybricks docs]: https://docs.pybricks.com/en/latest/
+[pybricks docs ev3devices]: https://docs.pybricks.com/en/latest/ev3devices.html
+[pybricks docs robotics]: https://docs.pybricks.com/en/latest/robotics.html
+[pybricks docs ev3devsensor]: https://docs.pybricks.com/en/latest/iodevices/ev3devsensor.html
+[hitechnic color sensor issue]: https://github.com/ev3dev/ev3dev/issues/1292#issuecomment-508627948

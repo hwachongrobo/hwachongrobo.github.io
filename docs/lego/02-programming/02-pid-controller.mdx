@@ -1,0 +1,76 @@
+# PID Controller
+PID. Proportional–Integral–Derivative.
+In Lego, it is commonly used for insane and accurate line tracking.
+
+
+PID Math:
+![PID Formula](/img/docs/lego/PID.jpg)
+# What does PID mean?
+P - Porpotional
+
+I - Integral
+
+D - Derivative
+
+❗❗❗ Do not confuse this with the other PID ❗❗❗
+So this is how you should program PID in all three "programming languages"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="ev3-g"
+  values={[
+    {label: 'EV3-G', value: 'ev3-g'},
+    {label: 'Pybricks', value: 'pybricks'},
+    {label: 'Small Basic EV3', value: 'sbev3'},
+  ]}>
+  <TabItem value="ev3-g">
+
+  ![Screenshot of EV3-G-PID][]
+
+  </TabItem>
+<TabItem value="pybricks">
+
+  ```python
+
+  ```
+
+  </TabItem>
+  <TabItem value="sbev3">
+
+  ```
+Motor.Invert("B")
+'[2] = Right sensor = Port 3
+
+TotalRGBTH[1] = 524
+
+TotalRGB[1] = 0
+
+lightVal = 0
+
+Last_Error = 0
+TP = 100 '100
+Kp = 0.12 '0.12
+Ki = 0.005 '0.005
+Kd = 0.4 '0.4
+Intergal = 0
+
+Sensor.SetMode(2, 4)
+
+Sub PD
+  Error = lightVal - TotalRGBTH[1]
+  Intergal = Error + Intergal*0.5
+  Correction = (Error * Kp) + (Error - Last_Error)*Kd + Intergal*Ki
+  Motor.StartSync("BC",Math.Max(Math.Min((TP + Correction),100),-100),Math.Max(Math.Min((TP - Correction),100),-100))
+  Last_Error = Error
+EndSub
+
+Sub readVal
+  rawValue = Sensor.ReadRaw(2,3)
+  lightVal = rawValue[0] + rawValue[1] + rawValue[2]
+EndSub
+  ```
+
+  </TabItem>
+</Tabs>

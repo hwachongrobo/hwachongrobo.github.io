@@ -1,0 +1,170 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Small Basic
+EV3 Basic is an alternative method of programming for EV3 Mindstorms.
+It uses Microsoft Small Basic IDE and its corresponding EV3 extension
+
+For more information visit, [Microsoft Small Basic][MSB] or [EV3 Basic Extension][EV3B]
+
+## Why use Small Basic EV3?
+
+You might already be familiar with EV3-G and EV3 Classroom.
+
+<Tabs
+  defaultValue="ev3-g"
+  values={[
+    {label: 'EV3-G', value: 'ev3-g'},
+    {label: 'EV3 Classroom', value: 'ev3-classroom'},
+    {label: 'Small Basic EV3', value: 'sbev3'},
+  ]}>
+  <TabItem value="ev3-g">
+
+  ![Screenshot of EV3-G][]
+
+  </TabItem>
+  <TabItem value="ev3-classroom">
+
+  ![Screenshot of EV3 Classroom][]
+
+  </TabItem>
+  <TabItem value="sbev3">
+
+  ```
+  for i = 1 to 4
+      Motor.Move("BC", 50, 720, "True")
+      Motor.MoveSync("BC", 30, 0, 320, "True")
+  EndFor
+  ```
+
+  </TabItem>
+</Tabs>
+
+However, they both come with their sets of issues. For example, EV3-G is known
+to be very laggy, particularly with large codebases;
+
+EV3 Classroom and Small Basic EV3 does not support the use of HiTechnic Color Sensors.
+
+Small Basic doesn't require you to load up an SD card and wait spend a long time :hourglass: just to wait for a firmware update.
+
+At the same time , you can also you full fludged programming techniques such as arrays that is not support in EV3-G or EV3 Classroom.
+
+## Getting Started
+
+Before you get your hand dirty and start programming like the Russians, you might want to read up on the syntax of [Microsoft Small Basic][SBD] as it is a proprietary language by Microsoft.
+
+Once you are done with that, go download the [Small Basic IDE][MSB-Install] and the [EV3 Basic Extension][EV3B-Install]
+
+Take note that it only works for Windows, those using macOS can just click off of this guide and miss out on the benefits of using small basic 😄. That is what you get for paying for an overly priced laptop 😈
+
+So how are you supposed to download the EV3 Basic code and run on your EV3 🤔
+
+Go to your Windows start menu by clicking on the little Windows icon and find for EV3 Explorer. The left side of the screen is your EV3 and the right side is your computer. Find for your code on the right, and create/navigate to a folder you made in the EV3 brick on the left. Once you are in your desired path, click <b>Download</b> on the bottom right of the screen. Then click on the file on the left side and click on <b>Compile</b> and you should be presented with an executable.
+
+insert the entire EV3 explorer image
+
+Phew 😌 That was alot hope you caught up
+## Common functions you might need
+```
+TextWindow.WriteLine("Hello") #Cannot be compiled
+```
+```
+Program.Delay(Duration)
+```
+## Basic Movment
+```
+Motor.Invert("Port number")
+```
+Like the name suggests, it inverts the motor speed automatically when the code is compiled.
+```
+Motor.GetCount(port)
+```
+This is to get the number of degrees the motor has made
+```
+Motor.MoveSync(port,speed for port 1, speed for port 2, degrees,brake)
+```
+This is what I would use for basic movement as you can control the speed of each motor individually. Its the excat replica of the Move Tank block in EV3-G
+## Sensors
+# Light Sensor
+```
+Sensor.SetMode(port,mode number)
+```
+For EV3 Sensors, there are usually 3 ports,
+
+1 -  Color
+2 -  Reflected Light Intensity
+3 -  Ambient Light Intensity
+
+However, for Small Basic, it opens up another port there is more powerful and more accurate than the other three. Its called the <b>ReadRaw</b> mode.
+It is the fourth port in the EV3 Basic syntax and it reads the raw RGB value of the light sensor. Ranging from 0 - 500 🤯.
+Therefore, it doesn't matter if your sensor position, whether it is too high or too close to the ground <b>SKILL ISSUE</b>
+So once you have set your port number to 4 and want to unlock the <b>UNLIMITED POWERRR</b> of that color sensor mode. How are you supposed to read it then? Well, if you have been reading the guide throughly (I know some of you do not 😏) you use the TextWindow.WriteLine("") and Sensor.ReadRaw() classes.
+```
+lightIntesntiy = Sensor.ReadRaw(port,3)
+TextWindow.WriteLine(lightIntenstiy)
+```
+❗❗❗ Remember you cannot compile it in EV3 Explorer just run it directly from the IDE ❗❗❗
+
+What would you see is a pop up menu that shows you three arrays, 0=x, 1=x, 2=x, (arrays start at zero genius). Using common sense, you would add up all of the values and💥that is your reflected light value.
+
+# Gyro Sensor
+First of all, you should not be using Gyro at all as once it dies on the field you robot is uselss
+
+If you have the guts enough, well good for you 👏. Lemme make a disclamer, EV3 basic does not have a dedicated Gyro reset class but this alternative.
+```
+
+```
+What this does is to take the current gyro degree/angle value and subtracts it. Such that before you turn, your gyro value is 0.
+
+For the rest of the sensor what I can say is reflected by this image
+![Eyes-Roll][]
+Bruh 🙄 why are you even alive in the first place. Gettt good
+
+## Advanced
+
+I am like using one sensor PID tracking, for this example
+# PID
+
+```
+Motor.Invert("B")
+'[2] = Right sensor = Port 3
+
+TotalRGBTH[1] = 524
+
+TotalRGB[1] = 0
+
+lightVal = 0
+
+Last_Error = 0
+TP = 100 '100
+Kp = 0.12 '0.12
+Ki = 0.005 '0.005
+Kd = 0.4 '0.4
+Intergal = 0
+
+Sensor.SetMode(2, 4)
+
+Sub PD
+  Error = lightVal - TotalRGBTH[1]
+  Intergal = Error + Intergal*0.5
+  Correction = (Error * Kp) + (Error - Last_Error)*Kd + Intergal*Ki
+  Motor.StartSync("BC",Math.Max(Math.Min((TP + Correction),100),-100),Math.Max(Math.Min((TP - Correction),100),-100))
+  Last_Error = Error
+EndSub
+
+Sub readVal
+  rawValue = Sensor.ReadRaw(2,3)
+  lightVal = rawValue[0] + rawValue[1] + rawValue[2]
+EndSub
+```
+# Acceleration and Deceleration
+```
+```
+[Screenshot of EV3-G]: /img/docs/lego/ev3_g.png
+[Screenshot of EV3 Classroom]: /img/docs/lego/ev3_classroom.png
+[Eyes-Roll]: /img/docs/lego/eyesroll.jpg
+[MSB]:https://smallbasic-publicwebsite.azurewebsites.net/
+[EV3B]:https://sites.google.com/site/ev3basic/ev3-basic-programming
+[SBD]:https://download.microsoft.com/download/9/0/6/90616372-C4BF-4628-BC82-BD709635220D/Introducing%20Small%20Basic.pdf
+[MSB-Install]:https://smallbasic-publicwebsite.azurewebsites.net/assets/SmallBasic_v1.2.msi
+[EV3B-Install]:https://github.com/c0pperdragon/EV3Basic/releases

@@ -16,11 +16,11 @@ module.exports = {
       {
         docs: {
           path: "docs",
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
+          showLastUpdateTime: true,
           editUrl:
             "https://github.com/hwachongrobotics/hwachongrobotics.github.io/edit/main/",
-          routeBasePath: "/",
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -28,12 +28,13 @@ module.exports = {
       },
     ],
   ],
+  plugins: [],
   themeConfig: {
     image: "img/meta.png",
     announcementBar: {
-      id: "docs-only-notice",
+      id: "1", // Increment this each time you make a new announcement
       content:
-        'This website only contains documentation. To go to the main website, click <a href="https://robo.infocommsociety.com/">here</a>.',
+        'This website only contains documentation. To learn more about Hwa Chong Robotics, click <a href="https://robo.infocommsociety.com/">here</a>.',
     },
     prism: {
       theme: require("prism-react-renderer/themes/github"),
@@ -52,38 +53,24 @@ module.exports = {
       title: "Hwa Chong Robotics",
       items: [
         {
-          label: "Docs",
+          label: "Lego",
           position: "left",
-          items: [
-            {
-              label: "Lego",
-              to: "/lego/introduction",
-            },
-            {
-              label: "Soccer",
-              to: "/soccer/introduction",
-            },
-            {
-              label: "RCJ Soccer Lightweight",
-              to: "/soccer-lightweight/introduction",
-            },
-            {
-              label: "RCJ Soccer Open",
-              to: "/soccer-open/introduction",
-            },
-            {
-              label: "RCJ Rescue Line",
-              to: "/rescue-line/introduction",
-            },
-            {
-              label: "Vex",
-              to: "/vex/introduction",
-            },
-            {
-              label: "Others",
-              to: "/Others/introduction",
-            },
-          ],
+          to: "/lego",
+        },
+        {
+          label: "RCJ",
+          position: "left",
+          to: "/rcj",
+        },
+        {
+          label: "VEX",
+          position: "left",
+          to: "/vex",
+        },
+        {
+          label: "Others",
+          position: "left",
+          to: "/others",
         },
         {
           type: "search",
@@ -101,31 +88,19 @@ module.exports = {
           items: [
             {
               label: "Lego",
-              to: "/lego/introduction",
+              to: "/lego",
             },
             {
-              label: "Soccer",
-              to: "/soccer/introduction",
+              label: "RCJ",
+              to: "/rcj",
             },
             {
-              label: "RCJ Soccer Lightweight",
-              to: "/soccer-lightweight/introduction",
-            },
-            {
-              label: "RCJ Soccer Open",
-              to: "/soccer-open/introduction",
-            },
-            {
-              label: "RCJ Rescue Line",
-              to: "/rescue-line/introduction",
-            },
-            {
-              label: "Vex",
-              to: "/vex/introduction",
+              label: "VEX",
+              to: "/vex",
             },
             {
               label: "Others",
-              to: "/Others/introduction",
+              to: "/others",
             },
           ],
         },
