@@ -66,6 +66,8 @@ For manual deployment, run the following:
 GIT_USER=<Your GitHub username> USE_SSH=true DEPLOYMENT_BRANCH=gh-pages yarn deploy
 ```
 
+YAY PASSED THE 100 COMMITS MILESTONE 🥳
+
 [license file]: https://github.com/hwachongrobotics/hwachongrobotics.github.io/blob/main/LICENSE
 [license]: https://img.shields.io/github/license/hwachongrobotics/hwachongrobotics.github.io
 [deploy action]: https://github.com/hwachongrobotics/hwachongrobotics.github.io/actions/workflows/deploy.yml
