@@ -64,11 +64,6 @@ module.exports = {
           to: "/rcj",
         },
         {
-          label: "VEX",
-          position: "left",
-          to: "/vex",
-        },
-        {
           label: "Others",
           position: "left",
           to: "/others",
@@ -93,10 +88,6 @@ module.exports = {
             {
               label: "RCJ",
               to: "/rcj",
-            },
-            {
-              label: "VEX",
-              to: "/vex",
             },
             {
               label: "Others",
