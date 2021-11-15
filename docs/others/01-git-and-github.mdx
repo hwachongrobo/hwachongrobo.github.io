@@ -14,9 +14,32 @@ Git : https://git-scm.com/downloads
 
 ## Usage
   
-# Git  
+# Git
+Using Git in command line interface is recommeneded compared to using the UI Version of it. So the following will include the commonly used git commands.  
   
-
+A good practice is to run ```git pull``` before editing your code so that you can be editing on the latest version of the code  
+  
+Another good practice is to push code frequently to Github. Think Github as your backup to your code. And also include useful commit messages.
+  
+To push a change to Github:
+```
+git add .
+git commit -m "<insert a useful change message>"
+git push
+```
+  
+To revert a change:
+```
+git log --oneline # To view commit history 
+```
+  
+It should look like this  
+![commitHistory][]  
+The left side is the commit hash, so copy that and replace it here  
+```
+git revert <insert commit hash>
+```
+⚠️ All the code will be reverted back to the commit hash you set⚠️  
 # Github  
   
-  
+[commitHistory]:/img/docs/others/commitHistory.png
