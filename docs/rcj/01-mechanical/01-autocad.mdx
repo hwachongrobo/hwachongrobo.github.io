@@ -38,23 +38,105 @@ Simply upload a document within 14 days. Best option is a **pic of your report c
 
 If you need help or don't have any school document for verification just ask some senior for help
 
-## Workspace setup for 3D Modelling
+## Basic Setup  
 
-3D Workspace  
+# Login and account  
 
-reccomended settings  
+After launching AutoCAD, you will be prompted to enter a license code or log in. Log in with your school account that you register for AutoCAD with or else you won't we able to use all the functions in the AutoCAD.  
 
-units  
+# Setting up 3D Workspace  
 
-etc
+Hit new on the left side and yow will enter the workspace. Hit the **gear icon** at the bottom right of the screen and set it to **3D Modelling** and boom now u have a sexy workspace  
 
-## Commonly used commands  
+![autocad-3dsettings][]
 
-um
+[autocad-3dsettings]: /img/docs/soccer/autocad/3dworkspace1.png  
 
-# Line
+Next, click on the up arrow icon on the bottom right of the screen, beside the square icon and turn all the options on  
 
-# Extrude
+![autocad-snapoptions][]
+
+[autocad-snapoptions]: /img/docs/soccer/autocad/snapoptions.png  
+
+Next, enter `units` into the command bar below and a window should pop up. Set the **precision** to the one with the most zeros and make sure units is in **millimeters**  
+
+You can also click **F8** or **Fn + F8** if you have Fn lock on to turn on ortho. Ortho is basically a setting that allows stuff to snap to 90 degree angles when drawing. 
+
+# Snapping to grid  
+
+Snapping to grid can be helpful when you want to be accurate to a certain extent. To turn on snap, click on the icon of nine dots near the bottom right corner 
+
+![autocad-snaptogrid][]
+
+[autocad-snaptogrid]: /img/docs/soccer/autocad/snaptogrid.png  
+
+Now your cursor will snap to the grid when drawing objects
+
+## Baic functions  
+
+# Line  
+
+To create a line, click on the line tool at the top of the screen or enter `l` into the command bar  
+
+![autocad-line][]
+
+[autocad-line]: /img/docs/soccer/autocad/line.png   
+
+To use the line tool, simply click on the start postion, click but do not hold, then click on the end postion to draw the line, you can continue to click on the next point if you want to draw multiple connected lines. To end the function, click on the **Esc** key.  
+
+Lines are used to create 2D shapes which you can turn into 3D objects later on but you will have to use a certain command to join them together into a shape so that they can be extrueded, because lines won't be connected into a polyline  (a compount shape where line are already connected together) by default.  
+
+# Rectangle 
+
+The Rectangle tool is used to create rectangles and squares more quickly instead of using multiples lines to create rectangles or squares. The Rectangle tool also allow the draw shapes to immediately combine into a polyline (a compount shape where line are already connected together)  
+
+To use the tool enter `rec` into the command bar or just click on the rectangle tool icon at the top of the screen  
+
+Similar to the line tool, just click, move and click again  
+
+# Circle  
+
+To create a circle, click on the circle tool or enter `c` into the command bar  
+
+Click to specify the **center** of the circle, move the the second spot to specify the **radius** or the cirle. If you want to specify the **diameter** of the circle instead, just click `d` and press enter then enter the diameter and hit enter  
+
+# Selecting objects 
+
+To select objects, theres 2 types of selection.  
+
+-The first type is the blue selection, **where you click but not hold, from the top left to the bottom right, and click again**. A blue area should appear. For this type of selection, only objects that are fully within the area will be selected.  
+
+![autocad-blue-selection][]
+
+[autocad-blue-selection]: /img/docs/soccer/autocad/blueselection.png   
+
+-The second type is the green selection, **where you click but not hold, from the top right to the bottom left, and click again**. A green area should appear. For this type of selection, any object that has some part of it within the selection area will be selected, and the object does not have to be fully within the area to be selected.  
+
+![autocad-green-selection][]
+
+[autocad-green-selection]: /img/docs/soccer/autocad/greenselection.png   
+
+Selected objects will be highlighted with a white glow  
+
+# Forming a polyline  
+
+By default, AutoCAD does not recognise multiple lines as a shape even though they seem to form a shape. AutoCAD only recognises the lines as a shape when you join the lines into a **polyline**  
+
+For example in this picture below, these 4 lines are not actually connected into a square  
+
+![autocad-polylineeg][]
+
+[autocad-polylineeg]: /img/docs/soccer/autocad/polylineeg.png  
+
+To connect the lines, select all of them, the type `join` into the command bar and hit enter
+
+![autocad-polylinee2g][]
+
+[autocad-polylineeg2]: /img/docs/soccer/autocad/polylineeg2.png  
+
+
+
+# Extrude  
 
 # Subtract
 
