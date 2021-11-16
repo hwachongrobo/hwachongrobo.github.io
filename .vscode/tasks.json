@@ -4,13 +4,21 @@
 		{
 			"type": "npm",
 			"script": "build",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
+			"group": "build",
 			"problemMatcher": [],
 			"label": "npm: build",
 			"detail": "docusaurus build"
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"problemMatcher": [],
+			"label": "npm: start",
+			"detail": "docusaurus start",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }

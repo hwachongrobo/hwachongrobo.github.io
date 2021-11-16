@@ -8,16 +8,59 @@ Git is software for tracking changes in any set of files, usually used for coord
   
 GitHub, Inc. is a provider of Internet hosting for software development and version control using Git  
 
-## Download & Installation
-  
-Git : https://git-scm.com/downloads
+## Setting up
 
-## Usage
+### Github  
   
-# Git
+You dont have to download Github, you just have to Sign up for an account  
+
+### Git
+Git : https://git-scm.com/downloads
+  
+Leave everything as default settings (Bascially click yes for everything)
+  
+Before you go pushing and pulling repositories, rememeber to type this inside your preferred terminal (Get Windows Terminal)
+```
+git config --global user.name "Your Name"
+git config --global user.email "Your Email"
+```
+  
+When you push something, they might show a pop up 
+![authenticateWithGithub][]  
+Do not fret and follow their instructions
+## Usage
+### Github  
+  
+The main thing you use Github for is to create repositories  
+  
+If you signed up Github for the first time, they would go through the process of creating a repository  
+  
+To recap, 
+
+![createNewRepo][]  
+
+In your home page, click on **New** in the top left part of the screen and boom, fill in the blanks and a repository is create
+
+### Git
 Using Git in command line interface is recommeneded compared to using the UI Version of it. So the following will include the commonly used git commands.  
   
+#### Cloning a repository
+  
+To clone a repository from Github, go to the repository on Github and click the code button
+
+![clickOnCopy][]
+  
+And copy the HTTPS link  
+  
+In your command line paste the following command
+
+```
+git clone <insert repository url>
+```
+    
 A good practice is to run ```git pull``` before editing your code so that you can be editing on the latest version of the code  
+
+#### Pushing your code
   
 Another good practice is to push code frequently to Github. Think Github as your backup to your code. And also include useful commit messages.
   
@@ -27,6 +70,8 @@ git add .
 git commit -m "<insert a useful change message>"
 git push
 ```
+  
+#### Reverting your code
   
 To revert a change:
 ```
@@ -40,6 +85,8 @@ The left side is the commit hash, so copy that and replace it here
 git revert <insert commit hash>
 ```
 ⚠️ All the code will be reverted back to the commit hash you set⚠️  
-# Github  
   
 [commitHistory]:/img/docs/others/commitHistory.png
+[clickOnCopy]:/img/docs/others/clickOnCopy.png
+[authenticateWithGithub]:/img/docs/others/authenticateWithGithub.png
+[createNewRepo]:/img/docs/others/createNewRepo.png
