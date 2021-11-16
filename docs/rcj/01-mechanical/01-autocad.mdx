@@ -74,6 +74,24 @@ Now your cursor will snap to the grid when drawing objects
 
 ## Baic functions  
 
+# Panning and camera angle  
+
+To pan around in a 360 view, hold **Shift** and hold down the **Middle Mouse Button** (Mouse scrollwheel), then drag your mouse around to pan  
+
+To pan round in a 2D angle, hold down the **Middle Mouse Button** (Mouse scrollwheel) and drag your mouse around to pan  
+
+You can also click the **Home** icon at the top right of the screen to return to the default view  
+
+![autocad-panningeg1][]
+
+[autocad-panningeg1]: /img/docs/soccer/autocad/panningeg1.png  
+
+You can also click and drag the cube icon on the top right to pan in a 360 view  
+
+![autocad-panningeg2][]
+
+[autocad-panningeg2]: /img/docs/soccer/autocad/panningeg2.png  
+
 # Line  
 
 To create a line, click on the line tool at the top of the screen or enter `l` into the command bar  
@@ -100,17 +118,17 @@ To create a circle, click on the circle tool or enter `c` into the command bar
 
 Click to specify the **center** of the circle, move the the second spot to specify the **radius** or the cirle. If you want to specify the **diameter** of the circle instead, just click `d` and press enter then enter the diameter and hit enter  
 
-# Selecting objects 
+# Selecting objects  
 
 To select objects, theres 2 types of selection.  
 
--The first type is the blue selection, **where you click but not hold, from the top left to the bottom right, and click again**. A blue area should appear. For this type of selection, only objects that are fully within the area will be selected.  
+- The first type is the blue selection, **where you click but not hold, from the top left to the bottom right, and click again**. A blue area should appear. For this type of selection, only objects that are fully within the area will be selected.  
 
 ![autocad-blue-selection][]
 
 [autocad-blue-selection]: /img/docs/soccer/autocad/blueselection.png   
 
--The second type is the green selection, **where you click but not hold, from the top right to the bottom left, and click again**. A green area should appear. For this type of selection, any object that has some part of it within the selection area will be selected, and the object does not have to be fully within the area to be selected.  
+- The second type is the green selection, **where you click but not hold, from the top right to the bottom left, and click again**. A green area should appear. For this type of selection, any object that has some part of it within the selection area will be selected, and the object does not have to be fully within the area to be selected.  
 
 ![autocad-green-selection][]
 
@@ -130,18 +148,146 @@ For example in this picture below, these 4 lines are not actually connected into
 
 To connect the lines, select all of them, the type `join` into the command bar and hit enter
 
-![autocad-polylinee2g][]
+![autocad-polylineeg2][]
 
 [autocad-polylineeg2]: /img/docs/soccer/autocad/polylineeg2.png  
 
+Now when the cursor is hovered over the lines, it gets highlighted all together and AutoCAD says that its a polyline  
 
+![autocad-polylineeg3][]
+
+[autocad-polylineeg3]: /img/docs/soccer/autocad/polylineeg3.png  
+
+When we have a polyline, we can proceed to **extrution**
 
 # Extrude  
 
-# Subtract
+To extrude and object, click on the object or select it so that its highlighted in blue, then type `extrude` into the command bar and click enter. A 3D object should be rendered and you can drag to specify the height and click to confirm or enter the height in mm and click enter  
 
-# Cube
+![autocad-extrudeeg1][]
 
-# Slicing
+[autocad-extrudeeg1]: /img/docs/soccer/autocad/extrudeeg1.png  
 
+There are different ways to render objects in AutoCAD, the one by default is the **2D wireframe**  
 
+To change, click on the **"2D wireframe"** at the top right of the screen and choose the mode you want
+
+![autocad-viewingmodes][]
+
+[autocad-viewingmodes]: /img/docs/soccer/autocad/viewingmodes.png  
+
+The most common types are:
+
+- 2D Wireframe: Mainly used when drawing 2D shapes and better for visualisation when you have fewer objects in the workspace. However, when they are too many objects, it can become messy
+
+- Realistic: This one is the best type for visualising 3D Objects and get a good look at how your model will look all together  
+
+- Shaded with edges: This one is similar to realisitc but there are still outlines making it easier to see the edges  
+
+# Box  
+
+If you want to create cuboid faster without drawing a rectangle then extruding, you can use the box tool.  
+
+Just type `box` into the command bar and hit enter, then click on the first corner of the cuboid, then click on the opposite corner of the **base** of the cuboid. After that specify the height by clicking at where you want it to be, or just enter the height  
+
+![autocad-boxtool][]
+
+[autocad-boxtool]: /img/docs/soccer/autocad/boxtool.png  
+
+# Moving objects  
+
+Theres 2 ways to move an object:  
+
+- This first way allow you to move an object in any of the 3 aix. This method is used when you want to move an object along a specify axis only. Just click on the object you want to move, then click on the arrow corresponding to the axis you want to move it along and just move your mouse to the point you want to move it to and click again  
+
+![autocad-3axismove][]
+
+[autocad-3axismove]: /img/docs/soccer/autocad/3axismove.png  
+
+- The other way is the move function. This method is used when you want to an object to a specify coordinate. Click on the object you want to move, the type `move` and then click enter. You will first be asked to enter the base point. The base point the relative point of the object that you want to move. When entering the coordinates later, this base point will be moved to the coordinates you speicfied. Usually, we set the base point as the center or the corner of an object, depending on what you want to do. You will then be asked to enter 3 number which are the X, Y and Z coordinates respectively. Type the X coordinate first then press the **comma** key, then enter the Y coordinate, then press the **comma** key, then type the Z coordinate, then hit **enter**  
+
+![autocad-movefunction][]
+
+[autocad-movefunction]: /img/docs/soccer/autocad/movefunction.png  
+
+# Subtract  
+
+The subtract tool is used to create more complex shapes by using one shape to subtract from another shape  
+
+Start by creating 2 or more 3D objects that have the areas that you want to subtract overlapping. For example in this picture this cyliner is overlapping within this cuboid  
+
+![autocad-subtracteg1][]
+
+[autocad-subtracteg1]: /img/docs/soccer/autocad/subtracteg1.png  
+
+Next, they will prompt you to select the objecct you want to subtract from, so in this example I will select the cubiod  
+
+![autocad-subtracteg2][]
+
+[autocad-subtracteg2]: /img/docs/soccer/autocad/subtracteg2.png  
+
+![autocad-subtracteg3][]
+
+[autocad-subtracteg3]: /img/docs/soccer/autocad/subtracteg3.png  
+
+Hit **enter** after selecting the objects you want to subtract from  
+
+Next, you will be prompted to select the objects will want to subtract. Basically, just select the objects that you want to cut off from the main object. In this example, I will select the cylinder in the center  
+
+![autocad-subtracteg4][]
+
+[autocad-subtracteg4]: /img/docs/soccer/autocad/subtracteg4.png  
+
+After thata just hit **enter**. After clicking enter, the subtraction should be executed
+
+![autocad-subtracteg5][]
+
+[autocad-subtracteg5]: /img/docs/soccer/autocad/subtracteg5.png  
+
+# Object union  
+
+To combine 2 more more 3D objects together into 1, you have to use the **union** function to union them together  
+
+![autocad-unioneg1][]
+
+[autocad-unioneg1]: /img/docs/soccer/autocad/unioneg1.png  
+
+In this example, there is a triangular ramp that I want to union with this other solid from earlier. Type `union` into the command bar then hit enter. Then select the objects you want to union and hit enter  
+
+![autocad-unioneg2][]
+
+[autocad-unioneg2]: /img/docs/soccer/autocad/unioneg2.png  
+
+As seen, the 2 solids have been unioned
+
+# Slicing  
+
+Sometimes you want to slice an object into 2 parts to make editing each part easier etc  
+
+To slice and object, draw a rectangle that covers the whole area you want to slice. This rectangle acts as a knife  
+
+![autocad-slicingeg1][]
+
+[autocad-slicingeg1]: /img/docs/soccer/autocad/slicingeg1.png  
+
+For example in this pic above, this rectangle is made to cut off this extra triangular ramp part on the right  
+
+After you have drawn your rectangle, type `slice` into the command bar. You will be prompted to select the object you want to slice, so just select your 3D solid, then hit enter. 
+
+![autocad-slicingeg2][]
+
+[autocad-slicingeg2]: /img/docs/soccer/autocad/slicingeg2.png  
+
+Next, you will be required select a slicing plane. Since we are using a rectangle to slice, type `o` and click enter, this will swap to a planar object for slicing, such as the rectangle we have drawn here. After that just select the rectangle and click enter  
+
+You will be asked to choose which side of the object you want to keep. Most of the time we will keep both and just delete the side we don't want later. If you want to keep both sides, type `b` and click enter  
+
+![autocad-slicingeg3][]
+
+[autocad-slicingeg3]: /img/docs/soccer/autocad/slicingeg3.png  
+
+As you can see, the object is now sliced into 2 parts yey :>  
+
+![autocad-slicingeg4][]
+
+[autocad-slicingeg4]: /img/docs/soccer/autocad/slicingeg4.png  
