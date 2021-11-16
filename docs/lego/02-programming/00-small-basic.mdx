@@ -1,7 +1,8 @@
+# Small Basic
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Small Basic
 EV3 Basic is an alternative method of programming for EV3 Mindstorms.
 It uses Microsoft Small Basic IDE and its corresponding EV3 extension
 
@@ -98,7 +99,7 @@ For EV3 Sensors, there are usually 3 Modes,
 However, for Small Basic, it opens up another mode there is more powerful and more accurate than the other three. Its called the Raw RGB mode.
 It is the fourth mode in the EV3 Basic syntax and it reads the raw RGB value of the light sensor - Red, Green and Blue. Ranging from 0 - 500 🤯.
 Therefore, it doesn't matter if your sensor position, whether it is too high or too close to the ground. 
-So once you have set your mode number to 4 and want to unlock the <b>UNLIMITED POWERRR</b> of that color sensor mode. How are you supposed to read it then?  
+So once you have set your mode number to 4 and want to unlock the **UNLIMITED POWERRR** of that color sensor mode. How are you supposed to read it then?  
 Well, if you have been reading the guide throughly (I know some of you do not 😏) you use the ```TextWindow.WriteLine("")``` and ```Sensor.ReadRaw()``` classes.
 ```
 lightIntesntiy = Sensor.ReadRaw(port,3)
@@ -106,51 +107,10 @@ TextWindow.WriteLine(lightIntenstiy)
 ```
 ❗❗❗ Remember you cannot compile it in EV3 Explorer just run it directly from the IDE ❗❗❗
 
-What would you see is a pop up menu that shows you three arrays, 0=x, 1=x, 2=x, (arrays start at zero genius). Using common sense, you would add up all of the values and💥that is your reflected light value.
+What would you see is a pop up menu that shows you three arrays, 0=x, 1=x, 2=x, (arrays start at zero). Using common sense, you would add up all of the values and💥that is your reflected light value.
 # Other Sensors
 For the rest of the sensor what I can say is reflected by this image
 ![Eyes-Roll][]
-
-## Advanced
-
-I am like using one sensor PID tracking, for this example
-# PID
-
-```
-Motor.Invert("B")
-'[2] = Right sensor = Port 3
-
-TotalRGBTH[1] = 524
-
-TotalRGB[1] = 0
-
-lightVal = 0
-
-Last_Error = 0
-TP = 100 '100
-Kp = 0.12 '0.12
-Ki = 0.005 '0.005
-Kd = 0.4 '0.4
-Intergal = 0
-
-Sensor.SetMode(2, 4)
-
-Sub PD
-  Error = lightVal - TotalRGBTH[1]
-  Intergal = Error + Intergal*0.5
-  Correction = (Error * Kp) + (Error - Last_Error)*Kd + Intergal*Ki
-  Motor.StartSync("BC",Math.Max(Math.Min((TP + Correction),100),-100),Math.Max(Math.Min((TP - Correction),100),-100))
-  Last_Error = Error
-EndSub
-
-Sub readVal
-  rawValue = Sensor.ReadRaw(2,3)
-  lightVal = rawValue[0] + rawValue[1] + rawValue[2]
-EndSub
-```
-# Acceleration and Deceleration
-```
-```
 [Screenshot of EV3-G]: /img/docs/lego/ev3_g.png
 [Screenshot of EV3 Classroom]: /img/docs/lego/ev3_classroom.png
 [Eyes-Roll]: /img/docs/lego/eyesroll.jpg
